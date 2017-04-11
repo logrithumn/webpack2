@@ -71,17 +71,6 @@ var config = {
         use : ['file-loader?name=../[name].[ext]']
       },
       {
-        test : /\.styl$/,
-        use : ExtractTextPlugin.extract({
-          fallback : 'style-loader',
-          use : [
-            'css-loader',
-            'postcss-loader',
-            'stylus-loader'
-          ]
-        })
-      },
-      {
         test: /\.hbs$/,
         use : [{
           loader : 'handlebars-loader',
@@ -100,6 +89,17 @@ var config = {
         use : [{
           loader: 'css-loader'
         }]
+      },
+      {
+        test : /\.styl$/,
+        use : ExtractTextPlugin.extract({
+          fallback : 'style-loader',
+          use : [
+            'css-loader',
+            'postcss-loader',
+            'stylus-loader'
+          ]
+        })
       },
       {
         test : /\.(jpe?g|png|gif|svg)$/i,
