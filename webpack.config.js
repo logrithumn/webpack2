@@ -22,12 +22,11 @@ var plugins = [
 
 if (!dev) {
   plugins.push(
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
-      dropDebugger : true,
-      dropConsole : true,
       compress : {
-        warnings : false
+        warnings : false,
+        drop_console : true,
+        drop_debugger : true
       }
     })
   );
